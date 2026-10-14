@@ -1,0 +1,17 @@
+# Private data and local verification
+work/
+reports/
+private/
+私密资料/
+.env
+.env.*
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# Generated dependencies and machine settings
+node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db

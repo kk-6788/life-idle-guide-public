@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人生浪费指南 · 没安排，也可以。</title>
+  <meta name="description" content="一本给忙人的小指南：允许时间没有产出。看云、发呆、走小路。浪费一会儿，也没关系。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#/browse" aria-label="人生浪费指南，回到首页">
+        <svg class="brand-cloud" viewBox="0 0 48 28" width="34" height="20" aria-hidden="true">
+          <path d="M12 24a8 8 0 0 1-1.2-15.9A10 10 0 0 1 30 10.5 7 7 0 0 1 31 24H12z" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">人生浪费指南</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#/browse" data-view="browse">随便逛</a>
+        <a href="#/community" data-view="community">大家闲聊</a>
+        <a href="#/saved" data-view="saved">我收着的</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-sky" aria-hidden="true">
+        <svg class="hero-cloud" viewBox="0 0 96 56" width="96" height="56">
+          <path d="M24 48a16 16 0 0 1-2.4-31.8A20 20 0 0 1 60 21a14 14 0 0 1 2 27H24z" fill="currentColor"/>
+        </svg>
+        <svg class="hero-cloud hero-cloud--second" viewBox="0 0 96 56" width="64" height="38">
+          <path d="M24 48a16 16 0 0 1-2.4-31.8A20 20 0 0 1 60 21a14 14 0 0 1 2 27H24z" fill="currentColor"/>
+        </svg>
+        <svg class="flock flock--a" viewBox="0 0 90 26" width="90" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M8 14 Q 13 7, 18 13 Q 23 7, 28 14"/>
+          <path d="M40 20 Q 44.5 14.5, 49 19.5 Q 53.5 14.5, 58 20"/>
+          <path d="M66 8 Q 70 3.5, 74 7.5 Q 78 3.5, 82 8"/>
+        </svg>
+        <svg class="flock flock--b" viewBox="0 0 90 26" width="70" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M6 16 Q 10.5 10, 15 15.5 Q 19.5 10, 24 16"/>
+          <path d="M52 10 Q 56 5.5, 60 9.5 Q 64 5.5, 68 10"/>
+          <path d="M70 19 Q 73.5 15, 77 18.5 Q 80.5 15, 84 19"/>
+        </svg>
+      </div>
+      <h1 id="hero-title">没安排，也可以。</h1>
+      <p class="hero-sub">一本给忙人的指南：允许时间没有产出。<br>看云、发呆、走一条不认识的小路。浪费一会儿，也没关系。</p>
+    </section>
+
+    <!-- 随便逛 -->
+    <section id="view-browse" class="view" aria-label="随便逛" hidden>
+      <section id="wheel-section" class="wheel-section" aria-labelledby="wheel-title">
+        <div class="wheel-stage">
+          <span class="wheel-pointer" aria-hidden="true"></span>
+          <div class="wheel-disc-frame">
+            <svg id="wheel-disc" class="wheel-disc" viewBox="0 0 320 320" aria-hidden="true"></svg>
+          </div>
+          <button id="wheel-spin" class="wheel-spin" type="button" aria-label="转一下，随机挑一件小事" aria-describedby="wheel-hint" disabled>转一下</button>
+        </div>
+        <div class="wheel-copy">
+          <h2 id="wheel-title">随便转转</h2>
+          <p class="wheel-intro">转到什么，都可以不做。</p>
+          <p id="wheel-hint" class="wheel-hint" role="status">小事正在路上…</p>
+          <div id="wheel-result" class="wheel-result" aria-live="polite" aria-atomic="true" hidden>
+            <h3 id="wheel-result-title"></h3>
+            <p id="wheel-maxim" class="wheel-maxim"></p>
+            <p id="wheel-cost" class="wheel-cost"></p>
+            <a id="wheel-detail" class="btn btn-ghost" href="#/browse">看看这件小事</a>
+          </div>
+        </div>
+      </section>
+      <div class="controls" aria-label="筛选与随机">
+        <div class="search-row">
+          <label class="search-label" for="search-input">找找</label>
+          <input id="search-input" type="search" placeholder="搜标题、正文或需要的东西，比如「废纸」" autocomplete="off">
+          <button id="random-btn" class="btn btn-ghost" type="button" disabled>转盘挑一个</button>
+        </div>
+
+        <fieldset class="chip-group">
+          <legend class="visually-hidden">按主题筛选</legend>
+          <button type="button" class="chip is-active" data-filter="category" data-value="">全部</button>
+          <button type="button" class="chip" data-filter="category" data-value="放空">放空</button>
+          <button type="button" class="chip" data-filter="category" data-value="闲逛">闲逛</button>
+          <button type="button" class="chip" data-filter="category" data-value="手边小事">手边小事</button>
+          <button type="button" class="chip" data-filter="category" data-value="童年游戏">童年游戏</button>
+          <button type="button" class="chip" data-filter="category" data-value="一起闲着">一起闲着</button>
+        </fieldset>
+
+        <fieldset class="chip-group">
+          <legend class="visually-hidden">按地点筛选</legend>
+          <button type="button" class="chip is-active" data-filter="setting" data-value="">不限地点</button>
+          <button type="button" class="chip" data-filter="setting" data-value="indoor">室内</button>
+          <button type="button" class="chip" data-filter="setting" data-value="outdoor">户外</button>
+        </fieldset>
+
+        <fieldset class="chip-group">
+          <legend class="visually-hidden">按人数筛选</legend>
+          <button type="button" class="chip is-active" data-filter="company" data-value="">不限人数</button>
+          <button type="button" class="chip" data-filter="company" data-value="solo">一个人</button>
+          <button type="button" class="chip" data-filter="company" data-value="together">两个人</button>
+          <button type="button" class="chip" data-filter="company" data-value="group">三人及以上</button>
+        </fieldset>
+      </div>
+
+      <p id="result-count" class="result-count" aria-live="polite"></p>
+
+      <div id="load-error" class="state-panel" hidden>
+        <h2>内容没有加载出来</h2>
+        <p>本页面通过相对路径读取共享内容 <code>shared/content.json</code>。请用本地 HTTP 服务打开项目根目录后访问 <code>/web/</code>，例如：</p>
+        <pre>python -m http.server 8000</pre>
+        <button id="retry-btn" class="btn btn-ghost" type="button">再试一次</button>
+      </div>
+
+      <div id="browse-list" class="card-list" aria-live="polite"></div>
+
+      <div id="browse-empty" class="state-panel" hidden>
+        <h2>没有找到符合的条目</h2>
+        <p>换个词，或者放宽筛选看看。</p>
+        <button id="clear-filter-btn" class="btn btn-ghost" type="button">清空筛选</button>
+      </div>
+    </section>
+
+    <!-- 大家闲聊 -->
+    <section id="view-community" class="view" aria-label="大家闲聊" hidden>
+      <div class="view-head">
+        <h2>大家闲聊</h2>
+        <p>分享一次闲着的体验，也可以只看看。提交后审核通过才展示。</p>
+        <p class="privacy-note">这里分享的内容会保存在本机服务里，审核通过后这台电脑上的人都能看到；你的收藏只存在自己浏览器里，不会发到这里。</p>
+      </div>
+
+      <div id="community-status" class="state-panel" aria-live="polite">
+        <h2>正在查看本机服务状态…</h2>
+      </div>
+
+      <div id="community-error" class="state-panel" hidden>
+        <h2>社区尚未开放</h2>
+        <p>本机社区服务暂不可用，暂时不能分享或评论。你可以继续浏览指南。</p>
+      </div>
+
+      <form id="post-form" class="post-form" aria-label="分享你的体验" hidden>
+        <p class="post-form-title">分享一次闲着的体验</p>
+        <div class="post-field">
+          <label for="post-activity">你做了哪件事</label>
+          <select id="post-activity"></select>
+        </div>
+        <div class="post-field">
+          <label for="post-nickname">你的昵称（1–20 字）</label>
+          <input id="post-nickname" type="text" maxlength="20" autocomplete="nickname">
+        </div>
+        <div class="post-field">
+          <label for="post-text">你刚才做了什么（1–500 字）</label>
+          <textarea id="post-text" rows="3" maxlength="500" placeholder="例如：刚才看了几朵云，走神以后就忘了数到哪。"></textarea>
+        </div>
+        <p id="post-error" class="field-error" role="alert" hidden></p>
+        <div class="post-actions">
+          <button type="submit" class="btn btn-primary">发布，进入审核</button>
+        </div>
+        <p class="form-note">提交后进入审核状态，审核通过才会公开展示。</p>
+      </form>
+
+      <div id="community-list" class="community-list" aria-live="polite"></div>
+      <div id="community-load-error" class="state-panel" hidden>
+        <h2>暂时没能载入分享</h2>
+        <p>本机社区服务暂时没有响应，请稍后再试。</p>
+        <button id="community-retry-btn" class="btn btn-ghost" type="button">重试</button>
+      </div>
+      <div id="community-empty" class="state-panel" hidden>
+        <h2>还没有人分享</h2>
+        <p>你可以成为第一个分享的人，也可以只是看看。</p>
+      </div>
+    </section>
+
+    <!-- 我收着的 -->
+    <section id="view-saved" class="view" aria-label="我收着的" hidden>
+      <div class="view-head">
+        <h2>我收着的</h2>
+        <p>收藏保存在当前浏览器。</p>
+      </div>
+      <div id="saved-list" class="card-list" aria-live="polite"></div>
+      <div id="saved-empty" class="state-panel" hidden>
+        <h2>这里还空着</h2>
+        <p>逛一逛，遇到喜欢的，点条目上的星收下。</p>
+        <a class="btn btn-ghost" href="#/browse">去逛逛</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 详情弹窗 -->
+  <div id="detail-dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
+    <div class="dialog-backdrop" data-close-dialog></div>
+    <div class="dialog-panel" role="document">
+      <button id="detail-close" class="dialog-close" type="button" aria-label="关闭详情">×</button>
+      <div class="detail-meta">
+        <span id="detail-category" class="tag"></span>
+        <span id="detail-setting" class="meta-text"></span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span id="detail-company" class="meta-text"></span>
+      </div>
+      <h2 id="detail-title" class="detail-title"></h2>
+      <p id="detail-maxim" class="detail-maxim" hidden></p>
+      <p id="detail-summary" class="detail-summary"></p>
+      <p id="detail-cost" class="detail-cost"></p>
+      <div id="detail-body" class="detail-body"></div>
+      <div class="detail-needs">
+        <span class="needs-label">需要</span>
+        <ul id="detail-needs-list"></ul>
+      </div>
+      <div class="detail-actions">
+        <button id="detail-fav" class="btn btn-ghost" type="button" aria-pressed="false">☆ 收着</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 举报弹窗 -->
+  <div id="report-dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="report-title" hidden>
+    <div class="dialog-backdrop" data-close-report></div>
+    <div class="dialog-panel" role="document">
+      <button id="report-close" class="dialog-close" type="button" aria-label="关闭举报">×</button>
+      <h2 id="report-title" class="report-title">举报</h2>
+      <p id="report-target" class="report-target"></p>
+      <form id="report-form" class="report-form">
+        <div class="post-field">
+          <label for="report-reason">原因（1–200 字）</label>
+          <textarea id="report-reason" rows="3" maxlength="200" placeholder="例如：广告、骚扰、不相关内容。"></textarea>
+        </div>
+        <p id="report-error" class="field-error" role="alert" hidden></p>
+        <div class="post-actions">
+          <button type="submit" class="btn btn-primary">提交举报</button>
+          <button type="button" id="report-cancel" class="btn btn-ghost">取消</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../shared/guide.js"></script>
+  <script src="wheel.js"></script>
+  <script src="community.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

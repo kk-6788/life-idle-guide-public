@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
+  <title id="title">人生浪费指南</title>
+  <desc id="desc">浪费一会儿，也没关系。浅蓝的天空里，白云和几只鸟缓缓路过。</desc>
+  <rect width="1600" height="480" rx="28" fill="#F0F6F8"/>
+  <circle cx="1315" cy="132" r="57" fill="#FFF0DA"/>
+  <g fill="#FFFFFF">
+    <rect x="1060" y="188" width="314" height="69" rx="34"/>
+    <circle cx="1140" cy="182" r="58"/>
+    <circle cx="1222" cy="155" r="80"/>
+    <circle cx="1301" cy="196" r="47"/>
+  </g>
+  <g fill="#DCEBE5" opacity="0.7">
+    <rect x="975" y="324" width="160" height="31" rx="16"/>
+    <circle cx="1023" cy="318" r="25"/>
+    <circle cx="1068" cy="311" r="35"/>
+  </g>
+  <g fill="none" stroke="#667E88" stroke-width="3" stroke-linecap="round" opacity="0.72">
+    <path d="M865 139q16-16 33 0q16-16 33 0"/>
+    <path d="M953 104q11-11 23 0q11-11 23 0"/>
+    <path d="M1432 297q13-13 27 0q13-13 27 0"/>
+  </g>
+  <path d="M0 435Q275 390 580 443T1100 436T1600 407V480H0Z" fill="#DCEBE5" opacity="0.68"/>
+  <path d="M1040 480Q1240 413 1600 450V480Z" fill="#EBD0B4" opacity="0.42"/>
+  <g font-family="'Noto Serif CJK SC','Noto Serif SC','Songti SC',STSong,SimSun,serif" fill="#253D4A">
+    <text x="102" y="213" font-size="76" letter-spacing="8">人生浪费指南</text>
+    <text x="107" y="282" font-size="32" letter-spacing="3" fill="#526A75">浪费一会儿，也没关系。</text>
+  </g>
+  <text x="109" y="367" font-family="'Microsoft YaHei','Noto Sans CJK SC',sans-serif" font-size="22" letter-spacing="2" fill="#667E88">这会儿，不必有用。</text>
+</svg>
